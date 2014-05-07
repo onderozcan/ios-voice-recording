@@ -1,9 +1,7 @@
-//
 //  voiceRecording.m
-//  TestNative
 //
 //  Created by Önder ÖZCAN on 18/04/14.
-//  Copyright (c) 2014 Avandel, Inc. All rights reserved.
+//  Copyright (c) 2014 Pixelblind, Inc. All rights reserved.
 //
 
 #import "voiceRecording.h"
@@ -94,8 +92,6 @@
     NSData *voiceData=nil;
     
     voiceData = [[NSData alloc] initWithContentsOfURL:soundURL];
-    
-    //fileName=[NSString stringWithFormat:@"_%@",userName];
     
     NSString *path = [documentsDirectory stringByAppendingPathComponent:soundFileName];
     
@@ -326,7 +322,6 @@
 
 - (IBAction)closeModal:(id)sender {
     
-    //eğer kayıt ettirdiyse save edecek .
     
     if(recordName.length > 0 & _closeButton.tag == 1)
     {
@@ -340,7 +335,7 @@
 
 - (IBAction)closeModalWithoutSave:(id)sender {
     
-    if(recordName.length > 0 && _closeButton.tag == 0) // Kayıt var demek ve bu kayıdı silmeliyiz
+    if(recordName.length > 0 && _closeButton.tag == 0)
     {
         [self removeVoice];
     }
